@@ -7,7 +7,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
-const speed = 127.5
+const speed = 32 * 6 + 0.5
 func _ready():
 	pass
 
@@ -22,5 +22,5 @@ func _physics_process(_delta):
 	if input_vector != Vector2.ZERO:
 		animationTree.set("parameters/blend_position", input_vector)
 	
-	return move_and_slide((143) * move_direction)
+	return move_and_slide(speed * move_direction)
 	
